@@ -1,9 +1,15 @@
-CODEBOOK
-========
+STUDY DESIGN
+============
 
-RAW DATA
---------
+This wearable computing data was derived from the Samsung Galazy S smartphone and futher
+colsolidated into a series of statistical measurements.  The purpose of this study was
+foremost to consolidate the mean and standard deviations as derived from these raw data
+sets and to further summarize this data into a list of human-readable measurements.
+The final output consisting of a row for each measurement and a column for each subject
+and activity pair, the value of which is the mean of those measurements.
 
+SOURCE
+------
 The source of the RAW data can be found at:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
@@ -16,18 +22,42 @@ and a copy of that has been packaged along with this package in the file:
 
 proj_dat.zip
 
+EXCLUSIONS
+----------
+
+* **Inertial Signals** - is the raw data before the initial consolidation, it wasn't
+required to calculate our means
+
+* columns from *X_train.txt* and *X_test.txt* that did not include the mean() or
+std() values.
+
+REQUIRED FILES
+--------------
+* **activity_labels.txt** - displays a list of the activities and the numerical value they
+are associated with.
+* **features.txt** - contains coded values of the measurements that were taken.
+* **test/X_test.txt** - the actual numerical values of the given measurements for the test suite
+* **test/y_test.txt** - the categorical interger for associating the activity with the measurement
+* **test/subject_test.txt** - the number of the test volunteer
+* **train/X_train.txt** - the actual numerical values of the given measurements for the training suite
+* **train/y_train.txt** - the categorical interger for associating the activity with the measurement
+* **train/subject_train.txt** - the number of the test volunteer
+
+CODE BOOK
+=========
+
 VARIABLES
 ---------
 
 The data contains the mean of 3-axial linear acceleration and 3-axial angular velocities
 at a constant rate of 50Hz as derived from a Samsung Galaxy S smartphone worn on the hip
-during different activities by 30 ~~test subjects~~ volunteers.
+during different activities by 30 ~~victims~~ volunteers.
 
 SUMMARY CHOICES
 ---------------
 
-Only those columns that contained the mean or standard deviation were used which resulted
-in the following row.names:
+The data excluded everything but the mean or standard deviation columns which resulted
+in the following (66) row.names:
 
 * Fast Fourier Transform Body Acceleration Mean X 
 * Fast Fourier Transform Body Acceleration Mean Y 
@@ -97,16 +127,17 @@ in the following row.names:
 * Time Domain Gravity Acceleration Euclidean Norm Standard Deviation 
 
 This was further broken down by subject (of which there were 30) and
-activity which consisted of:
+activity (6) which consisted of:
 
 * WALKING
-* WALKING_UPSTAIRS
-* WALKING_DOWNSTAIRS
+* WALKING UPSTAIRS
+* WALKING DOWNSTAIRS
 * SITTING
 * STANDING
 * LAYING
 
 Resulting in a total of 180 (30*6) columns.
+30 Volunteers with 6 activities each.
 
 EXPERIMENTAL STUDY DESIGN
 -------------------------
@@ -126,8 +157,21 @@ A single table is returned with...
 * Header Row Contains the Column names
 * Variable Names are Human Readable
 
-DETAILED PROCEEDURE
--------------------
+INSTRUCTION LIST
+================
+
+INPUT
+-----
+Though their are no parameters for this library the directory structure must be setup
+appropriately to read in the raw data. see the README.md file bundled with this file
+if you have questions as to how to setup your directory structure.
+
+OUTPUT
+------
+data.frame consisting of the tidy data set.
+
+DETAILED PROGRAMMING PROCEEDURE
+-------------------------------
 1. Initialized with test data using subject, activity and readings to create a data.frame
 
 2. Merged training subject, activity and readings data into this data.frame
