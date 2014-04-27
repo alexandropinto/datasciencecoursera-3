@@ -153,7 +153,7 @@ mechanism with the following ruleset:
     * a lower case character followed by an UPPER CASE character -> insert a space between them 
     and re-ran the last rule twice to ensure "BodyBodyGuru" was separated twice
 
-7. return a second, independent tidy data set with the average of each variable for each
+**OUTPUT** return a second, independent tidy data set with the average of each variable for each
 activity by each subject
 
 SAMPLE OUTPUT
