@@ -129,8 +129,11 @@ A single table is returned with...
 SAMPLE OUTPUT
 -------------
 
+```
 > UCIdata <- run_analysis()
 > UCIdata[1:4,1:4]
+```
+
 |                                                             |  1.WALKING|   2.WALKING|   3.WALKING| 4.WALKING|
 |-------------------------------------------------------------|----------:|-----------:|-----------:|---------:|
 |Fast Fourier Transform Body Acceleration Mean X              |-0.06810286| 0.084727087|-0.138107866| 0.1277641|
