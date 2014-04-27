@@ -126,6 +126,29 @@ A single table is returned with...
 * Header Row Contains the Column names
 * Variable Names are Human Readable
 
+DETAILED PROCEEDURE
+-------------------
+1. Initialized with test data using subject, activity and readings to create a data.frame
+2. Merged training subject, activity and readings data into this data.frame
+3. Added Column Names from features.txt file
+4. Extracted subject, activity and only the measurements for the mean and standard deviation
+into our current dataset
+5. Used descriptive activity names to rename the numerical activities from activity_labels.txt
+6. Appropriately label'd the data set with descriptive column names, using a search/replace
+mechanism with the following ruleset:
+* begins with 't' -> Time Domain
+* begins with 'f' -> Fast Fourier Transform
+* Acc -> Acceleration
+* Jerk -> Jerk Signal
+* Mag -> Euclidean Norm
+* -mean() -> Mean
+* -std() -> Standard Deviation
+* dash followed by UPPER CASE character -> remove the dash
+* a lower case character followed by an UPPER CASE character -> insert a space between them 
+and re-ran the last rule twice to ensure "BodyBodyGuru" was separated twice
+7. return a second, independent tidy data set with the average of each variable for each
+activity by each subject
+
 SAMPLE OUTPUT
 -------------
 
