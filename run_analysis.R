@@ -51,7 +51,7 @@ run_analysis <- function () {
   # * dash followed by UPPER CASE character -> remove the dash
   # * a lower case character followed by an UPPER CASE character -> insert a space between them
   # run the last rule twice to ensure "BodyBodyGuru" is separated twice to become "Body Body Guru"
-  if (T) {
+  {
     renameRules <- list(from <- c("^t", "^f", "Acc", "Jerk", "Mag", "-mean\\(\\)", "-std\\(\\)", "-([A-Z])",
                                   "([a-z])([A-Z])"),
                           to <- c("Time Domain ", "Fast Fourier Transform ", " Acceleration", " Jerk Signal",
