@@ -1,12 +1,9 @@
 STUDY DESIGN
 ============
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
+Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
+Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. 
 
-This wearable computing data was derived from the Samsung Galazy S smartphone and futher
-colsolidated into a series of statistical measurements.  The purpose of this study was
-foremost to consolidate the mean and standard deviations as derived from these raw data
-sets and to further summarize this data into a list of human-readable measurements.
-The final output consisting of a row for each measurement and a column for each subject
-and activity pair, the value of which is the mean of those measurements.
 
 SOURCE
 ------
@@ -18,9 +15,24 @@ This data was extracted into cloudfront.net for this coursera class located at:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-and a copy of that has been packaged along with this package in the file:
+The original dataset included the following data files:
 
-proj_dat.zip
+*'features.txt': List of all features.
+
+*'activity_labels.txt': List of class labels and their activity name.
+
+*'train/X_train.txt': Training set.
+
+*'train/y_train.txt': Training labels.
+
+*'train/subject_train.txt': ID's of subjects in the training data
+
+*'test/X_test.txt': Test set.
+
+*'test/y_test.txt': Test labels.
+
+*'test/subject_test.txt': ID's of subjects in the training data
+
 
 EXCLUSIONS
 ----------
@@ -31,17 +43,6 @@ required to calculate our means
 * columns from *X_train.txt* and *X_test.txt* that did not include the mean() or
 std() values.
 
-REQUIRED FILES
---------------
-* **activity_labels.txt** - displays a list of the activities and the numerical value they
-are associated with.
-* **features.txt** - contains coded values of the measurements that were taken.
-* **test/X_test.txt** - the actual numerical values of the given measurements for the test suite
-* **test/y_test.txt** - the categorical interger for associating the activity with the measurement
-* **test/subject_test.txt** - the number of the test volunteer
-* **train/X_train.txt** - the actual numerical values of the given measurements for the training suite
-* **train/y_train.txt** - the categorical interger for associating the activity with the measurement
-* **train/subject_train.txt** - the number of the test volunteer
 
 CODE BOOK
 =========
